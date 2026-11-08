@@ -1,130 +1,158 @@
-# Phase 1: SCAN — Tìm kiếm cơ hội (Cá nhân)
+# Lab 02 — Problem Scan: Vinpearl Guest Review Copilot (Vinpearl)
 
-Sử dụng 4 góc nhìn (Lenses) để quét qua hoạt động vận hành và trải nghiệm thực tế tại các công ty thành viên thuộc Vingroup:
+Bài nộp cá nhân theo form **Phase 1 — SCAN** và **Phase 2 — QUICK-ASSESS** trong [01-worksheet.md](01-worksheet.md).
 
-| # | Công ty thành viên | Góc nhìn (Lens) | Mô tả ngắn bài toán |
-|---|-------------------|----------------|---------------------|
-| 1 | Vincom Retail | AI có thể làm tốt hơn | Khách hàng cá nhân hoặc nhóm bạn đến TTTM Vincom thường mất nhiều thời gian loay hoay không biết ăn gì, chơi gì, mua gì cho phù hợp với sở thích, tính cách, quỹ thời gian và ngân sách cá nhân. |
-| 2 | Xanh SM | Lặp lại | Nhân viên vận hành phải tiếp nhận và phân bổ thủ công hàng trăm báo cáo sự cố trụ sạc hỏng, xe hết pin khẩn cấp từ tài xế về các trạm sạc còn trụ trống lân cận. |
-| 3 | Vinhomes | Tốn thời gian | Ban quản lý tòa nhà phải đọc thủ công hàng trăm phản ánh sự cố kỹ thuật điện nước mỗi ngày để tạo phiếu công việc nội bộ cho từng tổ kỹ thuật chuyên trách. |
-| 4 | VinFast | AI có thể làm tốt hơn | Cố vấn dịch vụ mất nhiều thời gian giải mã mô tả hiện tượng hỏng hóc bằng tiếng Việt dân dã của khách hàng để đối chiếu với danh mục mã lỗi kỹ thuật OBD-II. |
-| 5 | Vinmec | Nỗi đau từ người khác | Bác sĩ tốn trung bình 25 phút mỗi ca xuất viện để tổng hợp thông tin lâm sàng và soạn bản tóm tắt hồ sơ bệnh án dễ hiểu cho bệnh nhân. |
+**Dự án lựa chọn:** Vinpearl Guest Review Copilot — Trợ lý AI soạn bản nháp phản hồi đánh giá khách sạn trên OTA  
+**Công ty thành viên:** Vinpearl
 
 ---
 
-# Phase 2: QUICK-ASSESS — 3 Thẻ bài toán nhanh (Cá nhân)
+# 🔍 Phase 1 — SCAN (Cá nhân, 20 min)
 
-Chọn top 3 bài toán tiềm năng nhất để phân tích sơ bộ:
+Hãy sử dụng **4 Lenses** dưới đây để quét qua hoạt động vận hành của các công ty thành viên Vingroup. Ghi lại **ít nhất 5 bài toán/bottleneck** thực tế.
 
-## THẺ BÀI TOÁN SỐ 1: Vincom Retail — Trợ lý AI lập lộ trình trải nghiệm TTTM cá nhân hóa (Vincom Smart Concierge)
+### 4 Lenses tìm bài toán AI cho Vingroup:
+
+1. **Lặp lại (Repetitive):** Tác vụ lặp đi lặp lại nhiều lần hằng ngày.
+2. **Tốn thời gian (Time-consuming):** Tác vụ ngốn thời gian xử lý thủ công của nhân viên.
+3. **AI có thể tốt hơn (AI-upgrade):** Dịch vụ khách hàng hiện tại còn chậm hoặc phản hồi rập khuôn.
+4. **Pain từ người khác (Stakeholder Pain):** Bottleneck khiến khách hàng hoặc nhân viên thực địa phàn nàn.
+
+### 📝 List bài toán của tôi:
+
+| # | Subsidiary (VinFast/Xanh SM...) | Lens | Mô tả ngắn bài toán |
+|---|----------------------------------|------|---------------------|
+| 1 | **Vinpearl** | Tốn thời gian (Time-consuming) | Nhân viên CSKH khách sạn phải đọc và soạn thủ công từng phản hồi đánh giá 1–3 sao trên Booking, Agoda, Google; mỗi bài mất 12–15 phút, giọng văn không thống nhất giữa các ca trực. |
+| 2 | **VinFast** | Lặp lại (Repetitive) | Tư vấn viên showroom mỗi ngày soạn hàng chục bảng báo giá tùy biến (dòng xe, gói pin, phụ kiện, ưu đãi khu vực) bằng Excel, dễ lệch giá và mất khoảng 20 phút/khách. |
+| 3 | **Xanh SM** | Lặp lại (Repetitive) | Nhân viên chất lượng phải đọc hàng trăm ghi chú hủy chuyến của khách và tài xế mỗi ca để gắn nhãn nguyên nhân gốc (tài xế muộn, khách đổi ý, lỗi app) phục vụ báo cáo tuần. |
+| 4 | **Vinhomes** | AI có thể tốt hơn (AI-upgrade) | Bảo vệ/lễ tân xử lý đăng ký khách thăm bằng cách gọi điện xác nhận từng lượt với cư dân; giờ cao điểm mỗi lượt mất 10–15 phút, khách xếp hàng phàn nàn. |
+| 5 | **Vinmec** | Pain từ người khác (Stakeholder Pain) | Điều dưỡng tiền khám phải đọc lại nhiều lần khám cũ để tóm tắt tiền sử, dị ứng và thuốc đang dùng; bác sĩ phàn nàn mất 8–10 phút đầu buổi vì hồ sơ chưa sẵn. |
+
+---
+
+# 🃏 Phase 2 — QUICK-ASSESS (Cá nhân, 30 min)
+
+Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Problem Cards** dưới đây (10 phút/card).
+
+## THẺ BÀI TOÁN SỐ 1: Vinpearl — Trợ lý AI soạn bản nháp phản hồi đánh giá OTA (Guest Review Copilot)
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
 │ QUICK PROBLEM CARD #1                                       │
 │                                                             │
-│ Bài toán: Xây dựng trợ lý AI cá nhân hóa giúp một người     │
-│ hoặc nhóm bạn lập lộ trình trải nghiệm (ăn uống, giải trí,  │
-│ mua sắm) tại TTTM Vincom dựa trên ngân sách, thời gian      │
-│ rảnh, sở thích và tính cách.                                │
-│ Công ty thành viên: [x] Vincom Retail                       │
+│ Bài toán (1 câu): Xây dựng trợ lý AI soạn bản nháp phản hồi │
+│ đánh giá 1–3 sao trên Booking/Agoda/Google theo đúng chính  │
+│ sách thương hiệu Vinpearl, để CSKH chỉ việc duyệt và gửi.   │
+│ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
+│                     [ ] Vinmec   [x] Khác: Vinpearl         │
 │                                                             │
-│ Ai đang gặp khó khăn (Actor): Khách hàng cá nhân hoặc nhóm  │
-│ bạn trẻ đến vui chơi tại TTTM Vincom.                       │
+│ Ai đang đau (Actor)? Nhân viên CSKH khách sạn Vinpearl và   │
+│ quản lý trải nghiệm khách (Guest Experience).               │
 │                                                             │
-│ Workflow thủ công hiện tại (4 bước):                        │
-│   1. Đến TTTM hoặc mở điện thoại tìm kiếm từng quán ăn,     │
-│      rạp chiếu phim, khu vui chơi trên mạng xã hội          │
-│   -> 2. Bàn bạc, tính toán tiền nong và so sánh khung giờ   │
-│   -> 3. Đi lòng vòng tìm vị trí gian hàng giữa các tầng     │
-│   -> 4. Thường xuyên bị trễ giờ chiếu phim hoặc chi tiêu    │
-│      vượt mức ngân sách dự kiến                             │
+│ Workflow thủ công hiện tại (3-5 bước):                      │
+│   1. Kéo đánh giá mới từ Booking, Agoda, Google về inbox    │
+│   -> 2. Đọc review, xác định khiếu nại (phòng, F&B, spa...) │
+│   -> 3. Tra cứu chính sách hoàn/đổi, voucher, SOP xin lỗi   │
+│   -> 4. Soạn thư phản hồi tiếng Việt/Anh, gửi quản lý duyệt │
+│   -> 5. Đăng lên OTA và ghi log vào hệ thống nội bộ         │
 │                                                             │
-│ Bước tốn thời gian nhất: Bước 1, 2 và 3 (tốn 50 phút,       │
-│ dao động 45 - 60 phút để bàn bạc, tìm quán và tìm đường).   │
-│ AI có thể hỗ trợ ở bước nào: Bước 1, 2 và 3 (Tiếp nhận yêu  │
-│ cầu ngôn ngữ tự nhiên -> Tự động lựa chọn gian hàng, tính   │
-│ tổng chi phí, xếp thứ tự di chuyển tối ưu giữa các tầng).   │
+│ Bước nào tốn thời gian/lỗi nhất? Bước 2, 3 và 4             │
+│ (⏱ 12–15 phút/review; ca cuối tuần ~40 review/người).       │
+│ AI có thể nhảy vào hỗ trợ ở bước nào? Bước 2, 3 và 4        │
+│ (Phân loại chủ đề + mức độ nghiêm trọng -> Gợi ý chính sách │
+│ phù hợp -> Soạn bản nháp đa ngôn ngữ đúng giọng Vinpearl).  │
 │                                                             │
-│ Đo thành công bằng gì (Metric):                             │
-│ - Rút ngắn thời gian lên kế hoạch và tìm đường từ 50 phút   │
-│   xuống dưới 2 phút.                                        │
-│ - Độ lệch chi phí thực tế so với ngân sách đề ra dưới 10%.  │
-│ - Mức độ hài lòng của khách hàng (CSAT) đạt trên 90%.       │
+│ Đo thành công bằng gì (Metric có số)?                       │
+│ - Thời gian soạn phản hồi từ 15 phút ──> under 3 phút.      │
+│ - 100% bản nháp phải có HITL (không tự đăng lên OTA).       │
+│ - SLA phản hồi OTA đạt trên 95% trong 24 giờ.               │
 │                                                             │
-│ Quick Architecture: [x] LLM Feature (kết hợp Database danh  │
-│ mục gian hàng, giá cả và sơ đồ tầng TTTM Vincom)            │
+│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent │
+│ (LLM Feature soạn nháp + Rule tra cứu SOP/voucher; bắt buộc │
+│ CSKH bấm duyệt trước khi gửi)                               │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## THẺ BÀI TOÁN SỐ 2: Xanh SM — Điều phối sự cố trụ sạc cho đội xe taxi điện
+## THẺ BÀI TOÁN SỐ 2: VinFast — Tự động soạn báo giá showroom theo nhu cầu khách
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
 │ QUICK PROBLEM CARD #2                                       │
 │                                                             │
-│ Bài toán: Tự động phân tích tin nhắn báo sự cố trụ sạc từ   │
-│ tài xế để gợi ý trạm sạc VinFast còn trụ trống tương thích. │
-│ Công ty thành viên: [x] Xanh SM                             │
+│ Bài toán (1 câu): Tự động lập bảng báo giá VinFast từ mô tả │
+│ nhu cầu khách (dòng xe, ngân sách, gói pin, phụ kiện) theo  │
+│ bảng giá chính thức của khu vực.                            │
+│ Công ty thành viên: [x] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
+│                     [ ] Vinmec   [ ] Khác (Ghi rõ)________  │
 │                                                             │
-│ Ai đang gặp khó khăn (Actor): Điều phối viên tổng đài Xanh  │
-│ SM và Tài xế đang hoạt động thực địa.                       │
+│ Ai đang đau (Actor)? Tư vấn viên showroom VinFast.          │
 │                                                             │
-│ Workflow thủ công hiện tại (4 bước):                        │
-│   1. Tài xế gọi điện hoặc nhắn tin báo trụ sạc gặp lỗi      │
-│   -> 2. Điều phối viên tra cứu GPS và tình trạng trụ sạc    │
-│   -> 3. Xác định trạm sạc có cổng sạc tương thích còn trống │
-│   -> 4. Soạn tin nhắn hướng dẫn tài xế di chuyển            │
+│ Workflow thủ công hiện tại (3-5 bước):                      │
+│   1. Hỏi khách nhu cầu (dòng xe, màu, pin, phụ kiện)        │
+│   -> 2. Mở Excel/bảng giá khu vực, cộng từng dòng thủ công  │
+│   -> 3. Áp ưu đãi theo chương trình tháng                   │
+│   -> 4. Soạn file PDF gửi Zalo/email cho khách              │
 │                                                             │
-│ Bước tốn thời gian nhất: Bước 2 và 3 (8 đến 10 phút/lượt).  │
-│ AI có thể hỗ trợ ở bước nào: Bước 2 và 3 (Gọi API tra cứu   │
-│ trạm sạc theo vị trí và tự động tạo bản thảo hướng dẫn).    │
+│ Bước nào tốn thời gian/lỗi nhất? Bước 2 và 3                │
+│ (⏱ 20 phút/khách; dễ lệch giá khi đổi chương trình).        │
+│ AI có thể nhảy vào hỗ trợ ở bước nào? Bước 1, 2 và 3        │
+│ (Trích xuất nhu cầu từ hội thoại -> Map SKU/bảng giá ->     │
+│ Sinh bản nháp báo giá để tư vấn viên duyệt).                │
 │                                                             │
-│ Đo thành công bằng gì (Metric):                             │
-│ Giảm thời gian phản hồi tài xế từ 10 phút xuống dưới 2 phút.│
+│ Đo thành công bằng gì (Metric có số)?                       │
+│ Giảm thời gian lập báo giá từ 20 phút ──> under 3 phút;     │
+│ 100% đơn giá lấy từ bảng giá chính thức, không tự bịa giá.  │
 │                                                             │
-│ Quick Architecture: [x] LLM Feature (kết hợp Rule API)      │
+│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent │
+│ (LLM Feature + Rule/DB bảng giá; cấm AI tự đặt giá)         │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## THẺ BÀI TOÁN SỐ 3: Vinhomes — Phân loại yêu cầu kỹ thuật tòa nhà từ cư dân
+## THẺ BÀI TOÁN SỐ 3: Vinmec — Tóm tắt tiền sử khám trước giờ bác sĩ tiếp nhận
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
 │ QUICK PROBLEM CARD #3                                       │
 │                                                             │
-│ Bài toán: Tự động phân loại phản ánh hư hỏng thiết bị từ cư │
-│ dân trên ứng dụng Vinhomes Resident để chuyển giao kỹ thuật.│
-│ Công ty thành viên: [x] Vinhomes                            │
+│ Bài toán (1 câu): Tự động tóm tắt tiền sử, dị ứng và thuốc  │
+│ đang dùng từ hồ sơ nhiều lần khám để điều dưỡng/bác sĩ đọc  │
+│ trước khi tiếp nhận bệnh nhân.                              │
+│ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
+│                     [x] Vinmec   [ ] Khác (Ghi rõ)________  │
 │                                                             │
-│ Ai đang gặp khó khăn (Actor): Nhân viên chăm sóc khách hàng │
-│ tại văn phòng ban quản lý tòa nhà.                          │
+│ Ai đang đau (Actor)? Điều dưỡng tiền khám và bác sĩ lâm     │
+│ sàng tại phòng khám Vinmec.                                 │
 │                                                             │
-│ Workflow thủ công hiện tại (4 bước):                        │
-│   1. Cư dân gửi phản ánh trên ứng dụng                      │
-│   -> 2. Nhân viên đọc nội dung và xác định lĩnh vực         │
-│   -> 3. Tra cứu lịch trực của đội kỹ thuật phân khu         │
-│   -> 4. Tạo phiếu công việc trên hệ thống nội bộ            │
+│ Workflow thủ công hiện tại (3-5 bước):                      │
+│   1. Mở EMR, lướt nhiều lần khám cũ                         │
+│   -> 2. Ghi chú tay tiền sử, dị ứng, thuốc đang dùng        │
+│   -> 3. Hỏi lại bệnh nhân để bổ sung                        │
+│   -> 4. Đưa tờ tóm tắt cho bác sĩ ngay trước giờ khám       │
 │                                                             │
-│ Bước tốn thời gian nhất: Bước 2 và 3 (10 phút/phiếu).       │
-│ AI có thể hỗ trợ ở bước nào: Bước 2 và 3 (Phân loại ngành   │
-│ kỹ thuật: điện, nước, thang máy, điều hòa và gợi ý điều vận)│
+│ Bước nào tốn thời gian/lỗi nhất? Bước 1 và 2                │
+│ (⏱ 8–10 phút/ca; dễ sót dị ứng thuốc).                      │
+│ AI có thể nhảy vào hỗ trợ ở bước nào? Bước 1 và 2           │
+│ (Đọc EMR -> Sinh bản tóm tắt có cấu trúc; điều dưỡng duyệt  │
+│ trước khi đưa bác sĩ).                                      │
 │                                                             │
-│ Đo thành công bằng gì (Metric):                             │
-│ Rút ngắn thời gian tiếp nhận từ 10 phút xuống dưới 1 phút;  │
-│ độ chính xác phân loại đạt trên 90%.                        │
+│ Đo thành công bằng gì (Metric có số)?                       │
+│ Rút thời gian chuẩn bị hồ sơ từ 10 phút ──> under 2 phút;   │
+│ không bỏ sót trường dị ứng/thuốc (recall 100% trên test     │
+│ set vàng); AI không được tự kê đơn hay chẩn đoán.           │
 │                                                             │
-│ Quick Architecture: [x] LLM Feature                         │
+│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-# Quyết định lựa chọn bài toán cho Deep-Dive
+# 🗳️ Quyết định lựa chọn bài toán cho Deep-Dive
 
-Bài toán được lựa chọn để phân tích chuyên sâu (Phase 3 và Phase 5) là:
-**Thẻ bài toán số 1: Vincom Retail — Trợ lý AI lập lộ trình trải nghiệm TTTM cá nhân hóa (Vincom Smart Concierge)**.
+Bài toán được lựa chọn để phân tích chuyên sâu (Phase 3 và Phase 5) là:  
+**Thẻ bài toán số 1: Vinpearl — Trợ lý AI soạn bản nháp phản hồi đánh giá OTA (Guest Review Copilot).**
 
 ### Lý do lựa chọn:
-1. **Tính thực tiễn cao:** Đây là vấn đề thực tế mà bất kỳ cá nhân hay nhóm bạn trẻ nào cũng gặp phải khi đến các TTTM quy mô lớn của Vincom. Việc giải quyết khâu đắn đo, tranh luận tìm chỗ ăn chơi giúp tiết kiệm thời gian đáng kể.
-2. **Giá trị thương mại rõ ràng:** Giúp Vincom gia tăng tỷ lệ chi tiêu chéo (cross-spending) giữa các nhóm dịch vụ (ẩm thực, rạp chiếu phim, khu vui chơi và mua sắm), đồng thời giảm tình trạng khách hàng mệt mỏi bỏ về sớm.
-3. **Phù hợp công nghệ:** Khả năng hiểu ngôn ngữ tự nhiên của LLM xử lý rất tốt các yêu cầu đa dạng, mang tính cảm xúc của người dùng ("nhóm con trai thích ăn nướng, thích chỗ yên tĩnh, ngân sách 250k/người, rảnh 3 tiếng"), sau đó kết hợp cơ sở dữ liệu gian hàng để đưa ra lịch trình chuẩn xác.
+
+1. **Tính thực tiễn cao:** CSKH khách sạn phải xử lý review mỗi ngày, đặc biệt cuối tuần và mùa cao điểm; đây là tác vụ lặp, tốn thời gian và dễ lệch giọng thương hiệu giữa các ca trực.
+2. **Giá trị thương mại rõ ràng:** Phản hồi chậm hoặc lệch giọng trên OTA làm giảm điểm ranking Booking/Agoda và ảnh hưởng tỷ lệ đặt phòng. Rút SLA xuống dưới 24 giờ giúp giữ hạng và giảm rò rỉ booking.
+3. **Phù hợp công nghệ:** LLM xử lý tốt ngôn ngữ cảm xúc trong review, phân loại chủ đề khiếu nại và soạn nháp đa ngôn ngữ. Rule/SOP lo phần chính sách hoàn-voucher. Bắt buộc HITL: AI chỉ được tạo `[DRAFT_ONLY]`, tuyệt đối không tự đăng lên OTA, không tự ý hứa hoàn tiền ngoài chính sách.

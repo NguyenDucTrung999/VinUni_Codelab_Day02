@@ -1,39 +1,42 @@
 # Sơ đồ quy trình vận hành hiện tại (Current-State Workflow Diagram)
 
-Dự án: **Vincom Smart Concierge — Trợ lý AI lập lộ trình trải nghiệm TTTM cá nhân hóa**
-Công ty thành viên: **Vincom Retail**
+Dự án: **Vinpearl Guest Review Copilot — Trợ lý AI soạn bản nháp phản hồi đánh giá khách sạn trên OTA**
+Công ty thành viên: **Vinpearl**
 
 ---
 
 ## 1. Hình ảnh sơ đồ quy trình trực quan
 
-File sơ đồ đồ họa được đính kèm trực tiếp tại: [04-workflow-diagram.png](04-workflow-diagram.png)
+File sơ đồ đồ họa được đính kèm trực tiếp tại: [04-workflow-diagram.png](04-workflow-diagram.png) / [04-workflow-diagram.jpg](04-workflow-diagram.jpg)
 
 ```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│              CURRENT-STATE WORKFLOW: TRẢI NGHIỆM TTTM VINCOM                │
-├─────────────────┬─────────────────┬─────────────────┬───────────────────────┤
-│     BƯỚC 1      │     BƯỚC 2      │     BƯỚC 3      │        BƯỚC 4         │
-│ Gặp gỡ & Bàn bạc│ Tìm kiếm thông  │ Di chuyển tìm   │ Trải nghiệm & Trả tiền│
-│                 │ tin thủ công    │ gian hàng       │                       │
-│ Ai: Nhóm bạn    │ Ai: Nhóm bạn    │ Ai: Nhóm bạn    │ Ai: Nhóm bạn          │
-│ ⏱ 15 phút 🔴     │ ⏱ 20 phút 🔴     │ ⏱ 15 phút 🔴     │ ⏱ 10 phút             │
-│ In: Ý kiến rời  │ In: Ý định sơ bộ│ In: Vị trí sảnh,│ In: Hóa đơn, voucher  │
-│     rạc, gu ăn  │     & review MXH│     biển chỉ dẫn│                       │
-│ Out: Ý định     │ Out: DS quán ăn │ Out: Gian hàng  │ Out: Kết thúc buổi đi │
-│      chung sơ bộ│      & giờ phim │      thực tế    │      chơi, phát sinh  │
-├─────────────────┼─────────────────┼─────────────────┼───────────────────────┤
-│ [BOTTLENECK]    │ [BOTTLENECK]    │ [BOTTLENECK]    │                       │
-│ Bất đồng quan   │ Thông tin phân  │ Đi thang cuốn   │                       │
-│ điểm, khác gu ăn│ tán, menu thiếu │ lộn xộn, mệt mỏi│                       │
-│ và tiền nong    │ giá, mơ hồ quán │ trễ giờ phim    │                       │
-├─────────────────┼─────────────────┼─────────────────┼───────────────────────┤
-│ [HANDOFF]       │ [HANDOFF]       │ [HANDOFF]       │ [HANDOFF]             │
-│ Ý kiến cá nhân  │ Thông tin mạng  │ Sơ đồ sảnh ->   │ Hoàn tất cuộc vui     │
-│ -> Ý định chung │ -> DS quán ăn   │ Gian hàng thật  │                       │
-└─────────────────┴─────────────────┴─────────────────┴───────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────────────┐
+│        CURRENT-STATE WORKFLOW: PHẢN HỒI ĐÁNH GIÁ OTA TẠI VINPEARL                    │
+├──────────────┬──────────────┬──────────────┬──────────────┬──────────────────────────┤
+│   BƯỚC 1     │   BƯỚC 2     │   BƯỚC 3     │   BƯỚC 4     │         BƯỚC 5           │
+│ Kéo review   │ Đọc & phân   │ Tra SOP /    │ Soạn thư     │ Đăng OTA & ghi log       │
+│ từ OTA       │ loại khiếu   │ voucher      │ VI/EN + duyệt│                          │
+│              │ nại          │              │              │                          │
+│ Ai: CSKH     │ Ai: CSKH     │ Ai: CSKH     │ Ai: CSKH +   │ Ai: CSKH                 │
+│              │              │              │ Quản lý      │                          │
+│ ⏱ 1 phút     │ ⏱ 4 phút 🔴  │ ⏱ 4 phút 🔴  │ ⏱ 5 phút 🔴  │ ⏱ 1 phút                 │
+│ In: Booking/ │ In: Nội dung │ In: Chủ đề & │ In: SOP,     │ In: Bản đã duyệt         │
+│ Agoda/Google │ review VI/EN │ mức độ       │ giọng brand  │ Out: Review đã trả lời   │
+│ Out: Inbox   │ Out: Nhãn    │ Out: Mã SOP, │ Out: Bản nháp│                          │
+│ chưa trả lời │ chủ đề       │ hạn mức      │ chờ duyệt    │                          │
+├──────────────┼──────────────┼──────────────┼──────────────┼──────────────────────────┤
+│              │ [BOTTLENECK] │ [BOTTLENECK] │ [BOTTLENECK] │                          │
+│              │ Review cảm   │ SOP rải file,│ Lệch giọng   │                          │
+│              │ xúc, nhiều ý │ dễ áp sai mức│ ca trực; chờ │                          │
+│              │ lẫn lộn      │ bồi thường   │ duyệt lâu    │                          │
+├──────────────┼──────────────┼──────────────┼──────────────┼──────────────────────────┤
+│ [HANDOFF]    │ [HANDOFF]    │ [HANDOFF]    │ [HANDOFF]    │ [HANDOFF]                │
+│ OTA -> Inbox │ Nội dung thô │ Chính sách   │ Bản nháp ->  │ Đóng ticket              │
+│ nội bộ       │ -> Nhãn chủ  │ -> Khung trả │ Duyệt HITL   │                          │
+│              │ đề           │ lời          │              │                          │
+└──────────────┴──────────────┴──────────────┴──────────────┴──────────────────────────┘
 🔴 = Bottlenecks (Điểm nghẽn gây lãng phí thời gian)
-⏱ Tổng thời gian lên kế hoạch & tìm đường thủ công (3 bước đầu): 50 phút (dao động 45 - 60 phút).
+⏱ Tổng thời gian xử lý thủ công mỗi review: 15 phút (dao động 12–15 phút).
 ```
 
 ---
@@ -42,35 +45,38 @@ File sơ đồ đồ họa được đính kèm trực tiếp tại: [04-workflo
 
 ```mermaid
 flowchart TD
-    subgraph Step1["Bước 1: Gặp gỡ và Bàn bạc (15 phút)"]
-        A["Nhóm bạn gặp mặt hoặc nhắn tin"] --> B{"Thống nhất được ý kiến?"}
-        B -- "Không (Bottleneck)" --> C["Tranh cãi về sở thích, khẩu vị, ngân sách"]
-        C --> B
-        B -- "Có (Handoff 1)" --> D["Chốt ý định sơ bộ: Tìm quán ăn"]
+    subgraph Step1["Bước 1: Kéo review từ OTA (1 phút)"]
+        A["Booking / Agoda / Google có review mới"] --> B["CSKH kéo về inbox nội bộ"]
+        B --> C["Handoff 1: OTA -> Inbox"]
     end
 
-    subgraph Step2["Bước 2: Tìm kiếm thủ công (20 phút)"]
-        D --> E["Mở TikTok, Google Maps, App đánh giá"]
-        E --> F["Xem sơ đồ chỉ dẫn tại sảnh TTTM"]
-        F --> G{"Có đủ thông tin giá & vị trí?"}
-        G -- "Không (Bottleneck)" --> H["Thông tin phân tán, giá cả mơ hồ"]
-        H --> F
-        G -- "Có (Handoff 2)" --> I["Chọn được 1 quán ăn và 1 quán cà phê"]
+    subgraph Step2["Bước 2: Đọc và phân loại (4 phút)"]
+        C --> D["Đọc nội dung review VI/EN"]
+        D --> E{"Hiểu rõ chủ đề khiếu nại?"}
+        E -- "Không (Bottleneck)" --> F["Review cảm xúc, nhiều ý lẫn, viết tắt"]
+        F --> D
+        E -- "Có (Handoff 2)" --> G["Gắn nhãn: phòng / F&B / spa / đón tiễn"]
     end
 
-    subgraph Step3["Bước 3: Đi tìm gian hàng thực tế (15 phút)"]
-        I --> J["Di chuyển giữa các tầng TTTM"]
-        J --> K{"Dễ tìm đường không?"}
-        K -- "Không (Bottleneck)" --> L["Đi thang cuốn lên xuống lòng vòng, lạc đường"]
-        L --> J
-        K -- "Có (Handoff 3)" --> M["Đến đúng gian hàng"]
+    subgraph Step3["Bước 3: Tra SOP và voucher (4 phút)"]
+        G --> H["Mở file SOP xin lỗi / hạn mức bồi thường"]
+        H --> I{"Chọn đúng chính sách?"}
+        I -- "Không (Bottleneck)" --> J["SOP rải nhiều file, dễ áp sai mức"]
+        J --> H
+        I -- "Có (Handoff 3)" --> K["Chốt mã SOP + voucher hợp lệ"]
     end
 
-    subgraph Step4["Bước 4: Trải nghiệm & Thanh toán (10 phút)"]
-        M --> N["Sử dụng dịch vụ"]
-        N --> O{"Đúng ngân sách & thời gian?"}
-        O -- "Không (Bottleneck)" --> P["Vượt ngân sách, trễ giờ xem phim tiếp theo"]
-        O -- "Có" --> Q["Hoàn tất cuộc vui"]
+    subgraph Step4["Bước 4: Soạn thư và duyệt (5 phút)"]
+        K --> L["Soạn thư phản hồi VI/EN"]
+        L --> M{"Quản lý duyệt?"}
+        M -- "Không (Bottleneck)" --> N["Lệch giọng thương hiệu / hứa quá mức"]
+        N --> L
+        M -- "Có (Handoff 4)" --> O["Bản đã duyệt"]
+    end
+
+    subgraph Step5["Bước 5: Đăng OTA và ghi log (1 phút)"]
+        O --> P["Đăng phản hồi lên OTA"]
+        P --> Q["Ghi log và đóng ticket"]
     end
 ```
 
@@ -79,30 +85,32 @@ flowchart TD
 ## 3. Phân tích chi tiết các điểm nút
 
 ### A. Điểm nghẽn cổ chai (Bottlenecks)
-1. **Bottleneck 1 (Bàn bạc):** Trung bình 3-4 người mất 15 phút để thỏa hiệp về gu ẩm thực và mức chi tiêu của mỗi người.
-2. **Bottleneck 2 (Tìm kiếm):** Menu và bảng giá không được tổng hợp trên một màn hình, thông tin voucher bị phân tán khắp các trang mạng xã hội.
-3. **Bottleneck 3 (Đi lại):** Các TTTM Vincom thường có quy mô lớn (4-5 tầng), nếu không có lộ trình tối ưu theo chiều thang máy, khách hàng phải đi bộ nhiều vòng gây mệt mỏi.
-4. **Bottleneck 4 (Bội chi):** Do không tính tổng tiền trước, hóa đơn cuối cùng thường vượt từ 20% đến 40% so với dự tính ban đầu của sinh viên/giới trẻ.
+1. **Bottleneck 1 (Đọc & phân loại):** Review 1–3 sao thường chứa nhiều khiếu nại cảm xúc trong một đoạn; CSKH mất khoảng 4 phút để gắn đúng chủ đề.
+2. **Bottleneck 2 (Tra SOP):** Chính sách xin lỗi/voucher nằm rải file; áp sai hạn mức dễ dẫn đến hứa bồi thường ngoài quy định.
+3. **Bottleneck 3 (Soạn & duyệt):** Mỗi ca trực viết giọng khác nhau; quản lý phải sửa lại trước khi đăng, làm trễ SLA 24 giờ.
 
 ### B. Điểm chuyển giao (Handoffs)
-* **Handoff 1:** Chuyển từ nhu cầu mơ hồ của từng cá nhân sang ý định tập thể.
-* **Handoff 2:** Chuyển từ kết quả tìm kiếm trên mạng sang quyết định chọn địa điểm cụ thể.
-* **Handoff 3:** Chuyển từ sơ đồ số sang di chuyển thực tế trong không gian TTTM.
+* **Handoff 1:** Từ kênh OTA công khai sang inbox nội bộ của property.
+* **Handoff 2:** Từ nội dung review thô sang nhãn chủ đề vận hành.
+* **Handoff 3:** Từ nhãn chủ đề sang khung chính sách SOP/voucher.
+* **Handoff 4:** Từ bản nháp sang bước duyệt HITL trước khi đăng công khai.
 
 ---
 
-## 4. Căn cứ khoa học xác lập mốc thời gian Baseline (45 - 60 phút)
+## 4. Căn cứ xác lập mốc thời gian Baseline (12–15 phút)
 
 | Khâu trong quy trình | Thời gian tiêu tốn | Căn cứ / Nghiên cứu thực tế |
 |---|:---:|---|
-| **1. Bàn bạc, bất đồng ý kiến** | **15 phút** | Khảo sát **Food Indecision** của OnePoll (tranh luận chọn món theo nhóm kéo dài 15-20p). |
-| **2. Tìm quán, đọc menu, so giá** | **20 phút** | Nghiên cứu **The Paradox of Choice** (Barry Schwartz) & Khảo sát hành vi F&B của Q&Me. |
-| **3. Đi thang cuốn tìm gian hàng** | **15 phút** | Nghiên cứu **Indoor Wayfinding** tại Mega Mall của Hiệp hội TTTM Quốc tế (ICSC). |
-| **Tổng thời gian lãng phí** | **50 phút** *(45 - 60p)* | **Tổng hợp từ 3 nghiên cứu hành vi thực tế nêu trên.** |
+| **1. Kéo review về inbox** | **1 phút** | Thao tác vận hành inbox đa kênh Booking/Agoda/Google. |
+| **2. Đọc & phân loại khiếu nại** | **4 phút** | ReviewPro / Revinate: đọc và gắn nhãn review tiêu cực mất vài phút/lượt. |
+| **3. Tra SOP / voucher** | **4 phút** | Thực tế CSKH khách sạn: chính sách bồi thường phân tán, dễ tra sai mức. |
+| **4. Soạn thư + duyệt** | **5 phút** | Cornell CHR: phản hồi chất lượng trên OTA cần kiểm soát giọng thương hiệu. |
+| **5. Đăng & ghi log** | **1 phút** | Thao tác đăng và đóng ticket. |
+| **Tổng thời gian lãng phí** | **15 phút** *(12–15p)* | **Tổng hợp từ vận hành CSKH + nghiên cứu hospitality nêu trên.** |
 
 ---
 
 ## 5. Kết luận đánh giá
 
-* **Tổng thời gian lãng phí:** 45 - 60 phút cho mỗi lần đến Vincom.
-* **Cơ hội cho AI:** Giải quyết triệt để cả 3 khâu đầu tiên chỉ trong **dưới 2 phút** bằng cách dùng LLM phân tích yêu cầu tự nhiên, tự động lọc cơ sở dữ liệu gian hàng theo tầng và xuất ra timeline tối ưu, không bị đảo tầng và không vượt ngân sách.
+* **Tổng thời gian lãng phí:** 12–15 phút cho mỗi review 1–3 sao; ca cuối tuần ~40 review/người ≈ 10 giờ làm việc.
+* **Cơ hội cho AI:** Rút 3 khâu đọc–tra SOP–soạn nháp xuống **dưới 3 phút** bằng LLM Feature + catalog SOP, bắt buộc `[DRAFT_ONLY]` và HITL trước khi đăng OTA; case pháp lý/an toàn phải escalate Guest Experience.
